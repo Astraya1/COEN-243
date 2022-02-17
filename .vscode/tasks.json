@@ -3,7 +3,7 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "C/C++: g++.exe build active file",
+			"label": "g++ compiler: Desktop",
 			"command": "D:\\Apps\\MSYS2\\mingw64\\bin\\g++.exe",
 			"args": [
 				"-fdiagnostics-color=always",
@@ -23,27 +23,7 @@
 		},
 		{
 			"type": "cppbuild",
-			"label": "C/C++: gcc.exe build active file",
-			"command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
-			"args": [
-				"-fdiagnostics-color=always",
-				"-g",
-				"${file}",
-				"-o",
-				"C:\\Users\\maj46\\Documents\\GitHub\\COEN-243\\Executables\\${fileBasenameNoExtension}.exe"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build",
-			"detail": "compiler: C:\\msys64\\mingw64\\bin\\gcc.exe"
-		},
-		{
-			"type": "cppbuild",
-			"label": "C/C++: g++.exe build active file",
+			"label": "g++ compiler: Surface Pro",
 			"command": "C:\\msys64\\mingw64\\bin\\g++.exe",
 			"args": [
 				"-fdiagnostics-color=always",

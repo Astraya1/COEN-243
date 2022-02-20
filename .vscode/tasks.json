@@ -10,7 +10,7 @@
 				"-g",
 				"${file}",
 				"-o",
-				"D:\\GitHub\\COEN-243\\Executables\\${fileBasenameNoExtension}.exe"
+				"D:\\Codes\\Exes\\${fileBasenameNoExtension}.exe"
 			],
 			"options": {
 				"cwd": "${fileDirname}"

@@ -87,23 +87,24 @@ int main()
 void fourhighest(int* grades, int N) //Grades is the array of grades that will be inputted. N is the size of the array.
 {
     void swap(int &, int &);
-    int count = 0;
+    int count = 0; //Count variable tracks the index that marks the beginning of the unsorted portion of the grades array
     
-    //Partial-sorting algorithm that places the four highest grades at at the beginning of the array in order from highest to lowest.
+    //Partial selection sort algorithm that places the four highest grades at at the beginning of the array in order from highest to lowest.
+    //The algorithm works by continually computing the highest value in the unsorted portion array and placing it at the beginning.
     while (count < 4)
     {
-        int currenthighest = grades[count];
+        int currenthighest = grades[count]; //Creates a variable that is initialized to the first unsorted object in the array, whose value depends on the number of times the while loop has run for
 
-        for (int i = count; i<N; i++)
+        for (int i = count; i<N; i++) //For loop that computes the highest value in the unsorted array.
         {
-            if (grades[i] > currenthighest)
-                currenthighest = grades[i];   
+            if (grades[i] > currenthighest) //Uses comparison to compute the largest value
+                currenthighest = grades[i]; 
         }
 
-        for (int i = count; i<N; i++)
+        for (int i = count; i<N; i++) //For loop iterating through the unsorted portion of the array, and moving the first value encountered which matches the current highest found
         {
-            if (grades[i] == currenthighest)
-                swap(grades[i], grades[count]);
+            if (grades[i] == currenthighest) 
+                swap(grades[i], grades[count]); //Calls swap function defined below
         }
         count++;
     }
@@ -128,8 +129,9 @@ void fourlowest(int* grades, int N)
 {
     void swap(int &, int &);
     int count = 0;
-    
-    //Partial sorting algorithm that places the four lowest grades at the beginning of the array in order from lowest to highest.
+
+    //Partial selection sort algorithm that places the four lowets grades at at the beginning of the array in order from lowest to highest.
+    //Function follows exact same logic as the fourhighest function above it, however rather than computing the highest in the unsorted array, it computes the lowest
     while (count < 4)
     {
         int currentlowest = grades[count];
@@ -168,12 +170,12 @@ void average(int* grades, int N)
 {
     double sum = 0;
     
-    for (int i = 0; i<N; i++)
+    for (int i = 0; i<N; i++) //Finds sum of all grades entered
     {
         sum = sum + grades[i];
     }
 
-    cout << "The average grade is: " << sum/N << '.' << "\n" << "\n";
+    cout << "The average grade is: " << sum/N << '.' << "\n" << "\n"; //sum/N produces the average by dividing the total sum by the number of students
 }
 
 void median(int* grades, int N)
@@ -181,8 +183,10 @@ void median(int* grades, int N)
     void swap(int &, int &);
     int count = 0;
 
-    //Full sorting algorithm that works for an array of length N
+    //Full sorting algorithm that follows the same logic as fourlowest
+    //Instead of sorting just the first four, it sorts the whole array.
     while (count < N)
+    //Runs the selection sort loop N times as opposed to 4 times, since we want to sort the entire array not just four terms
     {
         int currentlowest = grades[count];
 

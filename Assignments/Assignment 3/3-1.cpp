@@ -207,12 +207,12 @@ void median(int* grades, int N)
     if (N%2 == 0) //If N is even
     {
         double median = (grades[N/2] + grades[(N/2)-1])/2; //Computes the median as the average of the two middle numbers in the set
-        cout << "The median is: " << median << "." << "\n" << "\n";
+        cout << "The median is: " << median << "." << "\n" << endl;
     }
     else
     {
         int median = grades[N/2];
-        cout << "The median is: " << median << "." << "\n" << "\n";
+        cout << "The median is: " << median << "." << "\n" << endl;
     }
 }
 
@@ -233,7 +233,7 @@ void Agrades(int* grades, int N)
             count++;
     }
 
-    cout << "The number of A grades is: " << count << "." << "\n" << "\n";
+    cout << "The number of A grades is: " << count << "." << "\n" << endl;
 }
 
 void Bgrades(int* grades, int N)
@@ -246,7 +246,7 @@ void Bgrades(int* grades, int N)
             count++;
     }
 
-    cout << "The number of B grades is: " << count << "." << "\n" << "\n";
+    cout << "The number of B grades is: " << count << "." << "\n" << endl;
 }
 
 void Cgrades(int* grades, int N)
@@ -259,7 +259,7 @@ void Cgrades(int* grades, int N)
             count++;
     }
 
-    cout << "The number of C grades is: " << count << "." << "\n" << "\n";
+    cout << "The number of C grades is: " << count << "." << "\n" << endl;
 }
 
 void Dgrades(int* grades, int N)
@@ -272,7 +272,7 @@ void Dgrades(int* grades, int N)
             count++;
     }
 
-    cout << "The number of D grades is: " << count << "." << "\n" << "\n";
+    cout << "The number of D grades is: " << count << "." << "\n" << endl;
 }
 
 void Fgrades(int* grades, int N)

@@ -11,6 +11,7 @@ int main()
     int voltage1, voltage2; 
 
     //first charger
+    cout << "First charger" << endl;
     cout << "What type of charger are you looking for? ";
     cin >> type1;
     
@@ -21,6 +22,7 @@ int main()
     cin >> voltage1;
 
     //second charger
+    cout << "Second charger" << endl;
     cout << "\n" << "What type of charger are you looking for? ";
     cin >> type2;
     
@@ -42,9 +44,7 @@ int main()
 
     cout << "\n" << "Are the two chargers exchangeable?" << endl;
 
-    bool exchangeable = charger1.exchangeable(charger2);
-
-    if (exchangeable == true)
+    if (charger1.exchangeable(charger2) == true)
         cout << "Yes";
     else
         cout << "No";

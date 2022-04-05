@@ -1,4 +1,3 @@
-#include "Charger.h"
 #include "Charger.cpp"
 #include <iostream>
 #include <string>

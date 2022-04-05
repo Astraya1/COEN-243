@@ -1,5 +1,12 @@
-#include <employee.h>
+#include "employee.h"
+#include <string>
+#include <iostream>
 using namespace std;
+
+Employee::Employee()
+{
+    empty = true;
+}
 
 Employee::Employee(int a, string b, string c, string d, string e, int f, double g, int h, string i)
 {
@@ -12,6 +19,12 @@ Employee::Employee(int a, string b, string c, string d, string e, int f, double 
     salary = g;
     areacode = h;
     phonenum = i;
+    empty = false;
+}
+
+bool Employee::get_empty()
+{
+    return empty;
 }
 
 int Employee::get_id()
@@ -46,7 +59,7 @@ int Employee::get_yearhired()
 
 string Employee::get_fullname()
 {
-    return (firstname + ' ' + lastname);
+    return (firstname + " " + lastname);
 }
 
 string Employee::get_datebirth()
@@ -91,14 +104,14 @@ void Employee::mod_phonenum(int newareacode, string newphonenum)
     phonenum = newphonenum;
 }
 
-bool Employee::same1(Employee employee2)
+bool Employee::same1(Employee employee2) //Same last name
 {
     if (lastname == employee2.get_lastname())
         return true;
     return false;
 }
 
-bool Employee::same2(Employee employee2)
+bool Employee::same2(Employee employee2) //Same salary or year hired
 {
     if (salary == employee2.get_salary() || yearhired == employee2.get_yearhired())
         return true;

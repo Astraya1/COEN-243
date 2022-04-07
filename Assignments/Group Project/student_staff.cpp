@@ -79,10 +79,10 @@ Student_Staff::Student_Staff()
     ptrstaff = staff;
 }
 
-void Student_Staff::highest_gpa(Students* students)
+void Student_Staff::highest_gpa(Students students[], int size)
 {
-    int arrsize = sizeof(students)/sizeof(students[0]);
-    for (int i{0}; i<arrsize; i++)
+    int cur
+    for (int i{0}; i<size; i++)
     {
         
     }

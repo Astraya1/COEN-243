@@ -22,9 +22,9 @@ public:
     Staff* getstaff();
 
     //Member funcs
-    void highest_gpa(Students[], int);
-    int n_undergrad(Students*);
-    void same_hire_year(Staff*);
+    void highest_gpa(Students*, int);
+    int n_undergrad(Students*, int);
+    void same_hire_year(Staff*, int, string);
 };
 
 #endif

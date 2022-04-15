@@ -1,14 +1,15 @@
-#include "staff.h"
-#include "students.h"
-#include "student_staff.h"
-#include "staff.cpp"
-#include "students.cpp"
-#include "student_staff.cpp"
 #include <iostream>
 #include <string>
 using namespace std;
 
 int main()
 {
-    
+    string str = "12/32/141";
+    string newstr = "";
+
+    for (int i{6}; i<str.length(); i++)
+        newstr = newstr + str[i];
+
+    cout << newstr;
+
 }

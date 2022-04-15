@@ -27,6 +27,7 @@ public:
     string getid();
     string getphonenumber();
     string getdateofhire();
+    string gethireyear();
     string getbonuscode();
     float getcurrentsalary();
     

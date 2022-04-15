@@ -75,15 +75,51 @@ Student_Staff::Student_Staff()
         staff[i] = Staff(firstname,lastname,id,phonenumber,datehired,bonuscode,salary);
     }
 
-    ptrstudents = students;
-    ptrstaff = staff;
+    ptrstudents = &students[0];
+    ptrstaff = &staff[0];
 }
 
-void Student_Staff::highest_gpa(Students students[], int size)
+void Student_Staff::highest_gpa(Students* students, int size)
 {
-    int cur
+    double currenthighest = students->getgpa();
+    Students currentstudent = *students;
+
+    for (int i{1}; i<size; i++)
+    {
+        double currentgpa = (students+i)->getgpa();
+
+        if (currentgpa > currenthighest)
+        {
+            currenthighest = currentgpa;
+            currentstudent = *(students+i);
+        }
+        
+    }
+    currentstudent.print_std_info();
+}
+
+int Student_Staff::n_undergrad(Students* students, int size)
+{
+    int count {0};
+
     for (int i{0}; i<size; i++)
     {
-        
+        if ((students+i)->getprogram() == "B")
+            count++;
+    }
+
+    return count;
+}
+
+void Student_Staff::same_hire_year(Staff* staffs, int size, string year)
+{
+
+    for (int i{0}; i<size; i++)
+    {
+        if ((staffs+i)->gethireyear() == year)
+        {
+            (staffs+i)->print_stf_info();
+            cout << endl;
+        }
     }
 }

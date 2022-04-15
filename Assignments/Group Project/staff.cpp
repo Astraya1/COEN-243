@@ -52,6 +52,16 @@ string Staff::getdateofhire()
     return dateofhire;
 }
 
+string Staff::gethireyear()
+{
+    string year = "";
+
+    for (int i{6}; i<dateofhire.length(); i++)
+        year = year + dateofhire[i];
+
+    return year;
+}
+
 string Staff::getbonuscode()
 {
     return bonuscode;
@@ -99,7 +109,7 @@ void Staff::setcurrentsalary(float x)
 
 void Staff::print_stf_info()
 {
-    cout << "Staff's information:";
+    cout << "Staff's information:" << endl;
     cout << "First name: " << firstname;
     cout << "\nLast name: " << lastname;
     cout << "\nID: " << id;

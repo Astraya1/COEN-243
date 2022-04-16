@@ -1,3 +1,5 @@
+#pragma once
+
 #include "staff.h"
 #include <iostream>
 #include <string>
@@ -173,4 +175,3 @@ void Staff::compare_exp(Staff staff2)
     else
         cout << "Both staff have the same work experience.\n";
 }
-

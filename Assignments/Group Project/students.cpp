@@ -1,3 +1,5 @@
+#pragma once
+
 #include "students.h"
 #include <iostream>
 #include <string>

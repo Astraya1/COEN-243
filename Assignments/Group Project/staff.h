@@ -1,5 +1,4 @@
-#ifndef STAFF_H
-#define STAFF_H
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -46,5 +45,3 @@ public:
     int getexp(string);
     void compare_exp(Staff);
 };
-
-#endif

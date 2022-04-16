@@ -1,5 +1,5 @@
-#include "staff.h"
-#include "students.h"
+#pragma once
+
 #include "student_staff.h"
 #include "students.cpp"
 #include "staff.cpp"
@@ -70,13 +70,22 @@ Student_Staff::Student_Staff()
         string phonenumber = studentvals[i*7+3];
         string datehired = studentvals[i*7+4];
         string bonuscode = studentvals[i*7+5];
-        float salary = studentvals[i*7+6];
+        string salarystring = studentvals[i*7+6];
+        float salary = stof(salarystring);
 
         staff[i] = Staff(firstname,lastname,id,phonenumber,datehired,bonuscode,salary);
     }
 
     ptrstudents = &students[0];
     ptrstaff = &staff[0];
+}
+
+void Student_Staff::getstudents()
+{
+    for (int i{0}; i<5; i++)
+    {
+        cout << (ptrstudents+i) << endl;
+    }
 }
 
 void Student_Staff::highest_gpa(Students* students, int size)

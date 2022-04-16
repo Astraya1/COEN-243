@@ -1,5 +1,4 @@
-#ifndef STUDENTS_H
-#define STUDENTS_H
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -48,5 +47,3 @@ public:
     void print_std_info();
     string comparegpa(Students);
 };
-
-#endif /* STUDENTS_H */

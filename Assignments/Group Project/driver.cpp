@@ -12,6 +12,7 @@ int main()
 {
     
     Student_Staff yourmom = Student_Staff();
-
-    yourmom.getstudents();
+    
+    
+    
 }

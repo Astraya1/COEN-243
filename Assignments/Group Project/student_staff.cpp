@@ -18,7 +18,7 @@ Student_Staff::Student_Staff()
     int size1; 
     infile >> size1; //Reads the first line to know how many students are in the file.
     string studentvals[size1*8]; //Creates an array to store all the attributes of the students, since there's 8 attributes per students object.
-    Students students[8]; //Creates the array of actual student objects, which will be the goal to fill up.
+    Students students[size1]; //Creates the array of actual student objects, which will be the goal to fill up.
 
     int count = 0; 
     while (!infile.eof())
@@ -28,8 +28,6 @@ Student_Staff::Student_Staff()
         studentvals[count] = line;
         count++;
     }
-
-    infile.close();
 
     for (int i{0}; i<size1; i++)
     {
@@ -45,33 +43,33 @@ Student_Staff::Student_Staff()
         students[i] = Students(firstname, lastname, id, datebirth, gpa, year, credits, program);
     }
 
+    infile.close();
+
     infile.open("staff.txt");
+
     int size2;
     infile >> size2;
     string staffvals[size2*7];
     Staff staff[size2];
-
     count = 0;
+
     while (!infile.eof())
-    {   
-        string line;
-        infile >> line;
-        staffvals[count] = line;
+    {
+        infile >> staffvals[count];
         count++;
     }
 
-    infile.close();
-
-    for (int i{0}; i<size1; i++)
+    for (int i{0}; i<size2; i++)
     {
-        string firstname = studentvals[i*7];
-        string lastname = studentvals[i*7+1];
-        string id = studentvals[i*7+2];
-        string phonenumber = studentvals[i*7+3];
-        string datehired = studentvals[i*7+4];
-        string bonuscode = studentvals[i*7+5];
-        string salarystring = studentvals[i*7+6];
-        float salary = stof(salarystring);
+        string firstname = staffvals[i*7];
+        string lastname = staffvals[i*7+1];
+        string id = staffvals[i*7+2];
+        string phonenumber = staffvals[i*7+3];
+        string datehired = staffvals[i*7+4];
+        string bonuscode = staffvals[i*7+5];
+        double salary = stod(staffvals[i*7+6]);
+
+        cout << firstname << "\n" << lastname << "\n" << id << "\n" << phonenumber << "\n" << datehired << "\n" << bonuscode << "\n" << salary;
 
         staff[i] = Staff(firstname,lastname,id,phonenumber,datehired,bonuscode,salary);
     }
@@ -82,9 +80,17 @@ Student_Staff::Student_Staff()
 
 void Student_Staff::getstudents()
 {
+    for (int i{0}; i<6; i++)
+    {
+        cout << (ptrstudents+i)->getid() << endl;
+    }
+}
+
+void Student_Staff::getstaff()
+{
     for (int i{0}; i<5; i++)
     {
-        cout << (ptrstudents+i) << endl;
+        cout << (ptrstaff+i)->getfirstname() << endl;
     }
 }
 

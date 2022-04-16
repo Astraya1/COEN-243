@@ -16,7 +16,7 @@ Staff::Staff()
     currentsalary = 0;
 }
 
-Staff::Staff(string a, string b, string c, string d, string e, string f, float g)
+Staff::Staff(string a, string b, string c, string d, string e, string f, double g)
 {
     firstname=a;
     lastname=b;
@@ -69,7 +69,7 @@ string Staff::getbonuscode()
     return bonuscode;
 }
 
-float Staff::getcurrentsalary()
+double Staff::getcurrentsalary()
 {
     return currentsalary;
 }
@@ -104,7 +104,7 @@ void Staff::setbonuscode(string x)
 {
     bonuscode = x;
 }
-void Staff::setcurrentsalary(float x)
+void Staff::setcurrentsalary(double x)
 {
     currentsalary=x;
 }
@@ -122,9 +122,9 @@ void Staff::print_stf_info()
 
 }
 
-float Staff::calculate_salary()
+double Staff::calculate_salary()
 {
-    float salary, code;
+    double salary, code;
     if (bonuscode == "A")
         code = 0.08;
     if (bonuscode == "B")

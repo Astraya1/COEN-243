@@ -13,12 +13,12 @@ private:
     string phonenumber; //514-987-6543
     string dateofhire; //12/12/2021
     string bonuscode; //A
-    float currentsalary; //123456
+    double currentsalary; //123456
         
 public:
     //Constructor
     Staff();
-    Staff(string, string, string, string, string, string, float);
+    Staff(string, string, string, string, string, string, double);
     
     //Getter
     string getfirstname();
@@ -28,7 +28,7 @@ public:
     string getdateofhire();
     string gethireyear();
     string getbonuscode();
-    float getcurrentsalary();
+    double getcurrentsalary();
     
     //Setter
     void setfirstname(string);
@@ -37,11 +37,11 @@ public:
     void setphonenumber(string);
     void setdateofhire(string);
     void setbonuscode(string);
-    void setcurrentsalary(float);
+    void setcurrentsalary(double);
     
     //Other
     void print_stf_info();
-    float calculate_salary();
+    double calculate_salary();
     int getexp(string);
     void compare_exp(Staff);
 };

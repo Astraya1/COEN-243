@@ -68,9 +68,7 @@ Student_Staff::Student_Staff()
         string datehired = staffvals[i*7+4];
         string bonuscode = staffvals[i*7+5];
         double salary = stod(staffvals[i*7+6]);
-
-        cout << firstname << "\n" << lastname << "\n" << id << "\n" << phonenumber << "\n" << datehired << "\n" << bonuscode << "\n" << salary;
-
+        
         staff[i] = Staff(firstname,lastname,id,phonenumber,datehired,bonuscode,salary);
     }
 
@@ -78,20 +76,14 @@ Student_Staff::Student_Staff()
     ptrstaff = &staff[0];
 }
 
-void Student_Staff::getstudents()
+Students* Student_Staff::getstudents()
 {
-    for (int i{0}; i<6; i++)
-    {
-        cout << (ptrstudents+i)->getid() << endl;
-    }
+    return ptrstudents;
 }
 
-void Student_Staff::getstaff()
+Staff* Student_Staff::getstaff()
 {
-    for (int i{0}; i<5; i++)
-    {
-        cout << (ptrstaff+i)->getfirstname() << endl;
-    }
+    return ptrstaff;
 }
 
 void Student_Staff::highest_gpa(Students* students, int size)

@@ -16,8 +16,8 @@ public:
     //Constructor
     Student_Staff();
 
-    void getstudents();
-    void getstaff();
+    Students* getstudents();
+    Staff* getstaff();
 
     //Member funcs
     void highest_gpa(Students*, int); //Takes inputs pointer to array of students, and size of that array
